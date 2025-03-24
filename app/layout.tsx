@@ -8,6 +8,7 @@ import {
   UserButton,
 } from '@clerk/nextjs';
 import './globals.css';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: 'Clerk Next.js Quickstart',
@@ -23,6 +24,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body>
+          <Header />
           <header className="flex justify-end items-center p-4 gap-4 h-16">
             <SignedOut>
               <SignInButton />
