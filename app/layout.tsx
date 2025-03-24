@@ -9,6 +9,7 @@ import {
 } from '@clerk/nextjs';
 import './globals.css';
 import Header from '@/components/Header';
+import Sidebar from '@/components/Sidebar';
 
 export const metadata: Metadata = {
   title: 'Clerk Next.js Quickstart',
@@ -25,16 +26,10 @@ export default function RootLayout({
       <html lang="en">
         <body>
           <Header />
-          <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <SignedOut>
-              <SignInButton />
-              <SignUpButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
-          {children}
+          <div className="flex min-h-screen bg-gray-100 overflow-y-auto scrollbar-hide">
+            <Sidebar />
+            <div>{children}</div>
+          </div>
         </body>
       </html>
     </ClerkProvider>
